@@ -141,7 +141,7 @@ class InstaBot:
         # log_mod 0 to console, 1 to file
         self.log_mod = config.get("log_mod")
         self.s = requests.Session()
-        self.s.proxies = {'http': 'http://36.67.250.197:8080'}
+        self.s.proxies = {"https" : 'http://202.9.24.226:8080'}
         self.c = requests.Session()
         # if you need proxy make something like this:
         # self.s.proxies = {"https" : "http://proxyip:proxyport"}
@@ -219,6 +219,12 @@ class InstaBot:
 
     def url_user(self, username):
         return self.url_user_detail % username
+
+    #def get_proxy(self):
+    #    payload = {'api_key': '7074c2a64f20a666ac6f732a25d7b55d', 'url': 'https://httpbin.org/ip'}
+    #    r = requests.get('http://api.scraperapi.com', params=payload)
+    #    ip = r.text.split(',')[0].split('"')[-1]
+    #    return f'{ip}:8080'
 
     def check_for_bot_update(self):
         self.logger.info("Checking for updates...")
