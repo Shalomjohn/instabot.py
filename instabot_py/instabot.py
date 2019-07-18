@@ -141,7 +141,7 @@ class InstaBot:
         # log_mod 0 to console, 1 to file
         self.log_mod = config.get("log_mod")
         self.s = requests.Session()
-        self.s.proxies = {"https" : 'http://202.9.24.226:8080'}
+        self.s.proxies = {"https" : 'https://201.151.79.30:8080', 'http': 'http://201.151.79.30:8080'}
         self.c = requests.Session()
         # if you need proxy make something like this:
         # self.s.proxies = {"https" : "http://proxyip:proxyport"}
